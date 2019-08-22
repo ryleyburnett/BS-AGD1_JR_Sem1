@@ -1,0 +1,128 @@
+polyCube -name "White_Key" -w 0.5 -h 0.25 -d 3 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+polyBevel3 -fraction 0.3 -offsetAsFraction 1 -autoFit 1 -depth 1 -mitering 0 -miterAlong 0 -chamfer 1 -segments 1 -worldSpace 1 -smoothingAngle 30 -subdivideNgons 1 -mergeVertices 1 -mergeVertexTolerance 0.0001 -miteringAngle 180 -angleTolerance 180 -ch 1 White_Key;
+
+duplicate -rr; move -x (0.52 * 1) 0 0;
+duplicate -rr; move -x (0.52 * 2) 0 0;
+duplicate -rr; move -x (0.52 * 3) 0 0;
+duplicate -rr; move -x (0.52 * 4) 0 0;
+duplicate -rr; move -x (0.52 * 5) 0 0;
+duplicate -rr; move -x (0.52 * 6) 0 0;
+duplicate -rr; move -x (0.52 * 7) 0 0;
+duplicate -rr; move -x (0.52 * 8) 0 0;
+duplicate -rr; move -x (0.52 * 9) 0 0;
+duplicate -rr; move -x (0.52 * 10) 0 0;
+duplicate -rr; move -x (0.52 * 11) 0 0;
+duplicate -rr; move -x (0.52 * 12) 0 0;
+duplicate -rr; move -x (0.52 * 13) 0 0;
+duplicate -rr; move -x (0.52 * 14) 0 0;
+duplicate -rr; move -x (0.52 * 15) 0 0;
+duplicate -rr; move -x (0.52 * 16) 0 0;
+duplicate -rr; move -x (0.52 * 17) 0 0;
+duplicate -rr; move -x (0.52 * 18) 0 0;
+
+duplicate -rr; move -x (0.52 * -1) 0 0;
+duplicate -rr; move -x (0.52 * -2) 0 0;
+duplicate -rr; move -x (0.52 * -3) 0 0;
+duplicate -rr; move -x (0.52 * -4) 0 0;
+duplicate -rr; move -x (0.52 * -5) 0 0;
+duplicate -rr; move -x (0.52 * -6) 0 0;
+duplicate -rr; move -x (0.52 * -7) 0 0;
+duplicate -rr; move -x (0.52 * -8) 0 0;
+duplicate -rr; move -x (0.52 * -9) 0 0;
+duplicate -rr; move -x (0.52 * -10) 0 0;
+duplicate -rr; move -x (0.52 * -11) 0 0;
+duplicate -rr; move -x (0.52 * -12) 0 0;
+duplicate -rr; move -x (0.52 * -13) 0 0;
+duplicate -rr; move -x (0.52 * -14) 0 0;
+duplicate -rr; move -x (0.52 * -15) 0 0;
+duplicate -rr; move -x (0.52 * -16) 0 0;
+duplicate -rr; move -x (0.52 * -17) 0 0;
+
+
+polyCube -name "Black_Key" -w 0.25 -h 0.25 -d 1.75 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+polyBevel3 -fraction 0.2 -offsetAsFraction 1 -autoFit 1 -depth 1 -mitering 0 -miterAlong 0 -chamfer 1 -segments 1 -worldSpace 1 -smoothingAngle 30 -subdivideNgons 1 -mergeVertices 1 -mergeVertexTolerance 0.0001 -miteringAngle 180 -angleTolerance 180 -ch 1 Black_Key;
+move 0.25 0.25 -0.625;
+
+duplicate -rr; move -x (0.25 + (0.52 * 1)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * 2)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * 4)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * 5)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * 7)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * 8)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * 9)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * 11)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * 12)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * 14)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * 15)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * 16)) 0.25 -0.625;
+
+duplicate -rr; move -x (0.25 + (0.52 * -2)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * -3)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * -5)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * -6)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * -7)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * -9)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * -10)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * -12)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * -13)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * -14)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * -16)) 0.25 -0.625;
+duplicate -rr; move -x (0.25 + (0.52 * -17)) 0.25 -0.625;
+
+
+polyCube -name "BaseBoard" -w 1 -h 1 -d 1 -sx 1 -sy 2 -sz 1 -ax 0 1 0 -cuv 4 -ch 1 ;
+move -r 0 -0.115 -2.033 ;
+scale -r 20 1 1 ;
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx 0 -pvy 0.9316829813 -pvz -1.533 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 - localTranslateZ 3.13 BaseBoard.f[0];
+polyBevel3 -fraction 0.1 -offsetAsFraction 1 -autoFit 1 -depth 1 -mitering 0 -miterAlong 0 -chamfer 1 -segments 1 -worldSpace 1 -smoothingAngle 30 -subdivideNgons 1 -mergeVertices 1 -mergeVertexTolerance 0.0001 -miteringAngle 180 -angleTolerance 180 -ch 1 BaseBoard;
+
+
+polyCylinder -name "Dial" -r 0.12 -h 0.25 -sx 16 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+move 0 0.425 -2 ;
+
+duplicate -rr; move -x (0.5 * 1) 0.425 -2 ;
+duplicate -rr; move -x (0.5 * 2) 0.425 -2 ;
+
+duplicate -rr; move -x (0.5 * 4) 0.425 -2 ;
+
+duplicate -rr; move -x (0.5 * 6) 0.425 -2 ;
+duplicate -rr; move -x (0.5 * 7) 0.425 -2 ;
+duplicate -rr; move -x (0.5 * 8) 0.425 -2 ;
+
+
+duplicate -rr; move -x (0.5 * -2) 0.425 -2 ;
+duplicate -rr; move -x (0.5 * -3) 0.425 -2 ;
+
+duplicate -rr; move -x (0.5 * -5) 0.425 -2 ;
+duplicate -rr; move -x (0.5 * -6) 0.425 -2 ;
+duplicate -rr; move -x (0.5 * -7) 0.425 -2 ;
+duplicate -rr; move -x (0.5 * -8) 0.425 -2 ;
+
+duplicate -rr; move -x (0.5 * -10) 0.425 -2 ;
+duplicate -rr; move -x (0.5 * -11) 0.425 -2 ;
+
+duplicate -rr; move -x (0.5 * -13) 0.425 -2 ;
+duplicate -rr; move -x (0.5 * -15) 0.425 -2 ;
+
+polyCube -name "Screen" -w 2 -h 0.2 -d 0.75 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+move -8.849 0.334 -2;
+
+
+polyCube -name "Slide" -w 0.2 -h 0.3 -d 0.75 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+move 5.2 0.331 -2;
+
+duplicate -rr; move -x (5.2 + (0.5 * 1)) 0.331 -2 ;
+duplicate -rr; move -x (5.2 + (0.5 * 2)) 0.331 -2 ;
+duplicate -rr; move -x (5.2 + (0.5 * 3)) 0.331 -2 ;
+duplicate -rr; move -x (5.2 + (0.5 * 4)) 0.331 -2 ;
+duplicate -rr; move -x (5.2 + (0.5 * 5)) 0.331 -2 ;
+duplicate -rr; move -x (5.2 + (0.5 * 6)) 0.331 -2 ;
+duplicate -rr; move -x (5.2 + (0.5 * 7)) 0.331 -2 ;
+duplicate -rr; move -x (5.2 + (0.5 * 8)) 0.331 -2 ;
+duplicate -rr; move -x (5.2 + (0.5 * 9)) 0.331 -2 ;
+
+
+polyCylinder -name "Slider" -r 0.75 -h 0.3 -sx 16 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+move -9.531 -0.18 0;
+rotate 0 0 90 ;
+scale 0.5 1 1;
