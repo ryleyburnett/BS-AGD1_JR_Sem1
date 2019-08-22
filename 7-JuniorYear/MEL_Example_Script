@@ -1,0 +1,18 @@
+{
+
+int $radius = 1;
+string $obj[];
+string $objects[];
+
+$obj = `polySphere -radius $radius`;
+move -absolute -worldspace 0 ($radius*2) 0 $obj[0];
+$radius++;
+$objects[size($objects)] = $obj[0];
+
+
+
+print ($objects);
+
+
+
+}
