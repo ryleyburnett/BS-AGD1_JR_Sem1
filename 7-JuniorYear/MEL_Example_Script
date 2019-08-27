@@ -16,3 +16,186 @@ print ($objects);
 
 
 }
+
+
+{
+string $obj[];
+string $objects[];
+string $group[];
+float $move = 0.9;
+
+int $amount = 2;
+
+$obj = `polyCube -name "Keyboard_Base"`;
+scale -x (24) -y (0.25) -z (8) $obj[0];
+$objects[size($objects)] = $obj[0];
+
+$obj = `polyCube -name "Keyboard_Key"`;
+scale -x (0.75) -y (0.2) -z (0.75) $obj[0];
+move -x (-11.2) -y (0.2) -z (-3.2);
+$objects[size($objects)] = $obj[0];
+
+$obj = `duplicate $objects[1]`;
+move -x (-11.2 + ($move * $amount)) -y (0.2) -z (-3.2) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+$amount++;
+
+$obj = `duplicate $objects[1]`;
+move -x (-11.2 + ($move * $amount)) -y (0.2) -z (-3.2) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+$amount++;
+
+$obj = `duplicate $objects[1]`;
+move -x (-11.2 + ($move * $amount)) -y (0.2) -z (-3.2) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+$amount++;
+
+$obj = `duplicate $objects[1]`;
+move -x (-11.2 + ($move * $amount)) -y (0.2) -z (-3.2) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+$obj[0] = `group -name "Keyboard_Group" $group`;
+$objects[size($objects)] = $obj[0];
+
+$obj = `duplicate $objects[6]`;
+move -x ($move * $amount) 0 0 $obj[0];
+$objects[size($objects)] = $obj[0];
+
+$amount = ($amount * 2);
+
+$obj = `duplicate $objects[6]`;
+move -x ($move * $amount) 0 0 $obj[0];
+$objects[size($objects)] = $obj[0];
+
+$amount = (17);
+
+clear $group;
+
+$obj = `duplicate $objects[1]`;
+move -x (-11.2 + ($move * $amount)) -y (0.2) -z (-3.2) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+$amount++;
+
+$obj = `duplicate $objects[1]`;
+move -x (-11.2 + ($move * $amount)) -y (0.2) -z (-3.2) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+$amount++;
+
+$obj = `duplicate $objects[1]`;
+move -x (-11.2 + ($move * $amount)) -y (0.2) -z (-3.2) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+$obj[0] = `group -name "Keyboard_Group" $group`;
+$objects[size($objects)] = $obj[0];
+
+$amount = 4;
+
+$obj = `duplicate $objects[12]`;
+move -x 0 0 -z (1.272) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+clear $group;
+
+print ($objects);
+print ($move);
+print ($group);
+
+}
+
+{
+string $obj[];
+string $objects[];
+string $xyz[];
+
+int $move = 1;
+int $movedown = 1;
+
+$obj = `polyCube -name "Keyboard_Base"`;
+scale -x (24) -y (0.25) -z (8) $obj[0];
+$objects[size($objects)] = $obj[0];
+
+$obj = `polyCube -name "Keyboard_Key"`;
+scale -x (0.75) -y (0.2) -z (0.75) $obj[0];
+move -x (-11.2) -y (0.2) -z (-3.2) $obj[0];
+makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1 $obj[0];
+$objects[size($objects)] = $obj[0];
+
+for( $move=0; $move<23;)
+{
+    
+$obj = `duplicate $objects[1]`;
+move -x ($move+1) -y (0) -z (0) $obj[0];
+$objects[size($objects)] = $obj[0];
+
+
+$move++;
+}
+
+print ($objects);
+}
+
+$obj[0] = `group -name "Keyboard_KeysGroup" $group';
+$objects[size($objects)] = $obj[0];
+
+for($movedown=0; $movedown<6;)
+{
+$obj = `duplicate $objects`;
+
+}
+
+
+
+//NEWEST 8/27 1:25
+
+{
+string $obj[];
+string $objects[];
+string $group[];
+
+int $move = 1;
+int $movedown = 1;
+
+$obj = `polyCube -name "Keyboard_Base"`;
+scale -x (24) -y (0.25) -z (8) $obj[0];
+$objects[size($objects)] = $obj[0];
+
+$obj = `polyCube -name "Keyboard_Key"`;
+scale -x (0.75) -y (0.2) -z (0.75) $obj[0];
+move -x (-11.2) -y (0.2) -z (-3.2) $obj[0];
+makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1 $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+for( $move=0; $move<22;)
+{
+    
+$obj = `duplicate $objects[1]`;
+move -x ($move+1) -y (0) -z (0) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+
+$move++;
+}
+
+$obj[0] = `group -name "Keyboard_KeysGroup" $group`;
+$objects[size($objects)] = $obj[0];
+
+print ($objects);
+}
+
+
+
