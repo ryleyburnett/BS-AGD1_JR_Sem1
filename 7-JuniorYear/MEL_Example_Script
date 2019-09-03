@@ -197,5 +197,482 @@ $objects[size($objects)] = $obj[0];
 print ($objects);
 }
 
+//NEWEST 8/27 3:00
 
+{
+string $obj[];
+string $objects[];
+string $group[];
+clear $group;
+
+int $move = 1;
+int $movedown = 1;
+
+$obj = `polyCube -name "Keyboard_Base"`;
+scale -x (24) -y (0.25) -z (8) $obj[0];
+$objects[size($objects)] = $obj[0];
+
+$obj = `polyCube -name "Keyboard_Key"`;
+scale -x (0.75) -y (0.2) -z (0.75) $obj[0];
+move -x (-11.2) -y (0.2) -z (-3.2) $obj[0];
+makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1 $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+for( $move=0; $move<22;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move+1) -y (0) -z (0) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+$move++;
+}
+
+$obj[0] = `group -name "Keyboard_KeysGroup" $group`;
+$objects[size($objects)] = $obj[0];
+clear $group;
+$group[size($group)] = $obj[0];
+
+for( $movedown=0; $movedown<6;)
+{
+$obj = `duplicate $group[0]`;
+move -x (0) -y (0) -z ($movedown+1) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+$movedown++;
+}
+
+//----------------------------------
+
+$obj = `ungroup $group`;
+$objects[size($objects)] = $obj[0];
+
+
+print ($objects);
+
+print ($group);
+print ($obj);
+}
+
+
+
+//BEST NO GROUPING
+
+
+{
+string $obj[];
+string $objects[];
+string $group[];
+clear $group;
+
+int $move = 1;
+int $movedown = 1;
+
+//-------- CREATE BASE - CREATE KEY 1 -----
+$obj = `polyCube -name "Keyboard_Base"`;
+scale -x (24) -y (0.25) -z (8) $obj[0];
+$objects[size($objects)] = $obj[0];
+
+$obj = `polyCube -name "Keyboard_Key"`;
+scale -x (0.75) -y (0.2) -z (0.75) $obj[0];
+move -x (-11.2) -y (0.2) -z (-3.2) $obj[0];
+makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1 $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+//----------- FOR STATEMENTS -------------
+for( $move=0; $move<22;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move+1) -y (0) -z (0) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+//------------- MOVE KEYS --------------
+move 16.5 0 0 $objects[018]; move 17.5 0 0 $objects[019];
+move 18.5 0 0 $objects[020]; move 16.5 0 2 $objects[041];
+move 17.5 0 2 $objects[042]; move 18.5 0 2 $objects[043];
+move 16.5 0 3 $objects[064]; move 17.5 0 3 $objects[065];
+move 18.5 0 3 $objects[066]; move 17.5 0 5 $objects[111];
+move 16.5 0 6 $objects[133]; move 17.5 0 6 $objects[134];
+move 18.5 0 6 $objects[135];
+
+//------------ DELETE KEYS ------------
+delete $objects[002]; delete $objects[007];
+delete $objects[012]; delete $objects[017];
+delete $objects[021]; delete $objects[022];
+delete $objects[023]; delete $objects[040];
+delete $objects[063]; delete $objects[086];
+delete $objects[087]; delete $objects[088];
+delete $objects[089]; delete $objects[109];
+delete $objects[110]; delete $objects[112];
+delete $objects[132];
+
+
+print ($objects);
+
+print ($obj);
+}
+
+//------ NEWEST -------
+
+
+{
+string $obj[];
+string $objects[];
+string $group[];
+clear $group;
+
+int $move = 1;
+int $movedown = 1;
+
+//-------- CREATE BASE - CREATE KEY 1 -----
+$obj = `polyCube -name "Keyboard_Base"`;
+scale -x (24) -y (0.25) -z (8) $obj[0];
+$objects[size($objects)] = $obj[0];
+
+$obj = `polyCube -name "Keyboard_Key"`;
+scale -x (0.75) -y (0.2) -z (0.75) $obj[0];
+move -x (-11.2) -y (0.2) -z (-3.2) $obj[0];
+makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1 $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+//----------- FOR STATEMENTS -------------
+for( $move=0; $move<22;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move+1) -y (0) -z (0) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+//------------- MOVE KEYS --------------
+move 16.5 0 0 $objects[018]; move 17.5 0 0 $objects[019];
+move 18.5 0 0 $objects[020]; move 16.5 0 2 $objects[041];
+move 17.5 0 2 $objects[042]; move 18.5 0 2 $objects[043];
+move 16.5 0 3 $objects[064]; move 17.5 0 3 $objects[065];
+move 18.5 0 3 $objects[066]; move 17.5 0 5 $objects[111];
+move 16.5 0 6 $objects[133]; move 17.5 0 6 $objects[134];
+move 18.5 0 6 $objects[135];
+
+//------------ DELETE KEYS ------------
+delete $objects[002]; delete $objects[007];
+delete $objects[012]; delete $objects[017];
+delete $objects[021]; delete $objects[022];
+delete $objects[023]; delete $objects[038];
+delete $objects[039]; delete $objects[040];
+delete $objects[062]; delete $objects[063]; 
+delete $objects[085]; delete $objects[086];
+delete $objects[087]; delete $objects[088];
+delete $objects[089]; delete $objects[094];
+delete $objects[107]; delete $objects[108]; 
+delete $objects[109]; delete $objects[110]; 
+delete $objects[112]; delete $objects[119];
+delete $objects[121]; delete $objects[122];
+delete $objects[123]; delete $objects[124]; 
+delete $objects[132]; delete $objects[137];
+
+
+print ($objects);
+
+print ($obj);
+}
+
+{
+string $obj[];
+string $objects[];
+string $group[];
+
+clear $group;
+
+int $move = 1;
+int $movedown = 1;
+
+//-------- CREATE BASE - CREATE KEY 1 -----
+$obj = `polyCube -name "Keyboard_Base"`;
+scale -x (24) -y (0.25) -z (8) $obj[0];
+$objects[size($objects)] = $obj[0];
+
+$obj = `polyCube -name "Keyboard_Key"`;
+scale -x (0.75) -y (0.2) -z (0.75) $obj[0];
+move -x (-11.2) -y (0.2) -z (-3.2) $obj[0];
+makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1 $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+
+//----------- FOR STATEMENTS -------------
+for( $move=0; $move<22;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move+1) -y (0) -z (0) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+$movedown++;
+
+for( $move=0; $move<23;)
+{
+$obj = `duplicate $objects[1]`;
+move -x ($move) -y (0) -z ($movedown) $obj[0];
+$objects[size($objects)] = $obj[0];
+$group[size($group)] = $obj[0];
+    $move++;
+}
+
+//------------- MOVE KEYS -------------
+move 16.5 0 0 $objects[018]; move 17.5 0 0 $objects[019];
+move 18.5 0 0 $objects[020]; move 16.5 0 2 $objects[041];
+move 17.5 0 2 $objects[042]; move 18.5 0 2 $objects[043];
+move 16.5 0 3 $objects[064]; move 17.5 0 3 $objects[065];
+move 18.5 0 3 $objects[066]; move 17.5 0 5 $objects[111];
+move 16.5 0 6 $objects[133]; move 17.5 0 6 $objects[134];
+move 18.5 0 6 $objects[135];
+
+//------------ MOVE AND RESIZE ---------
+move 14 0 2 $objects[37];
+move 14 0 5 $objects[106];
+
+move 14.5 0 3 $objects[61];
+move 14.5 0 4 $objects[84];
+move 0.5 0 5 $objects[93];
+move 2.5 0 6 $objects[118];
+move 20.5 0 6 $objects[136];
+
+move 6 0 6 $objects[120];
+
+
+scale 3.65 1 1 $objects[37]; scale 3.65 1 1 $objects[106];
+scale 2.25 1 1 $objects[61]; scale 2.25 1 1 $objects[84];
+scale 2.25 1 1 $objects[93]; scale 2.25 1 1 $objects[118];
+scale 2.25 1 1 $objects[136]; scale 6.35 1 1 $objects[120];
+
+$obj[0] = `group -name "Keyboard_Group" $objects`;
+$objects[size($objects)] = $obj[0];
+
+//------------ DELETE KEYS ------------
+delete $objects[002]; delete $objects[007];
+delete $objects[012]; delete $objects[017];
+delete $objects[021]; delete $objects[022];
+delete $objects[023]; delete $objects[038];
+delete $objects[039]; delete $objects[040];
+delete $objects[062]; delete $objects[063]; 
+delete $objects[085]; delete $objects[086];
+delete $objects[087]; delete $objects[088];
+delete $objects[089]; delete $objects[094];
+delete $objects[107]; delete $objects[108]; 
+delete $objects[109]; delete $objects[110]; 
+delete $objects[112]; delete $objects[119];
+delete $objects[121]; delete $objects[122];
+delete $objects[123]; delete $objects[124]; 
+delete $objects[132]; delete $objects[137];
+
+//---------------------------------------------
+clear $objects;
+
+
+$obj = `polyUnite -name "Keyboard_GEO" $obj`;
+$objects[size($objects)] = $obj[0];
+
+DeleteAllHistory;
+
+$obj[0] = `group -name "Keyboard_GEO_Group" $objects`;
+
+print ($objects);
+
+print ($obj);
+}
+
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+
+string $sels[] = `ls -sl`;
+
+if(size($sels) > 0)
+{
+	print ("You have " + size($sels) + " objects selected.");
+}
+else 
+{
+	error("Must \"select\" an object!");
+}
+
+print ("\nThrough the if statement.");
+
+{
+
+string $sels[] = `ls -sl`;
+
+if(!size($sels) > 0)
+{
+		error("Must \"select\" an object!");
+}
+
+print ("You have " + size($sels) + " objects selected.");
+print ("\nThrough the if statement.");
+
+}
 
