@@ -1,0 +1,64 @@
+{
+
+string $names = {"Bill", "Mary", "Jonathan"}
+string $fruits = {"Apples", "Oranges", "Raspberry"}
+string $veggies = {"Carrots", "Celery", "Tomato"}
+
+for ($i=0; $i<size($names); $i++)
+{
+	print ($names[$i] + "\n");
+}
+
+for ($i=0; $i<size($fruits); $i++)
+{
+	print ($fruits[$i] + "\n");
+}
+
+for ($i=0; $i<size($veggies); $i++)
+{
+	print ($veggies[$i] + "\n");
+}
+
+proc PrintArray()
+{
+
+
+}
+
+}
+
+//////////////////////////////
+//////////////////////////////
+
+{
+proc InsultGenerator()
+{
+	string $insults[] = {"Eat My Shorts!", "Yo' Mamma So Fat!", "Nobody Likes You.", "What a Silly Goose, You!", "You Would Do The World a Favor if You Died."};
+	
+	int $size = `size($insults)`;
+	float $randNum = `rand $size`;
+	int $index = `floor $randNum`;
+	
+	print ($insults[$index]);
+			
+}
+
+InsultGenerator();
+
+}
+
+proc ComplimentGenerator(string $name, int $age)
+{
+	string $compliments[] = {"You are so lovely.", "Nice hair.", "You obviously are a female."}
+	$age -= 7;
+	
+	int $size = `size($compliments)`;
+	float $randNum = `rand $size`;
+	int $index = `floor $randNum`;
+	
+	print ($name + ", " + $compliments[$index] + " you don't look a day over " + $age + "!");
+}
+
+
+
+
