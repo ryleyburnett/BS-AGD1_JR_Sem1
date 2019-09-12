@@ -59,6 +59,46 @@ proc ComplimentGenerator(string $name, int $age)
 	print ($name + ", " + $compliments[$index] + " you don't look a day over " + $age + "!");
 }
 
+///////////////////////////////////////////////
+
+{
+int $copies =   0  ; //NUMBER OF DUPLICATES
+
+float $xPos = 10;
+float $yPos = 10;
+float $zPos = 10;
+
+float $x = `rand ($xPos * -1) $xPos`;
+float $y = `rand ($yPos * -1) $yPos`; 
+float $z = `rand ($zPos * -1) $zPos`; 
+
+string $xyz[];
+$xyz[0] = $x; $xyz[1] = $y; $xyz[2] = $z;
+
+//SELECTION
+string $sels[];
+$sels = `ls -sl`;
+
+if(!size($sels) > 0)
+{
+	//CHECK FOR SELECTION
+	error("Must \"select\" an object.");
+}
+
+else
+{
+//MOVE SELECTION ANYWHERE BETWEEN -XYZs
+move -x ($xyz[0]) -y ($xyz[0]) -z ($xyz[0]) $sels[0]; 
+
+}
+
+print ("You have " + size($sels) + " objects selected." + "\n");
+print ($sels);
+
+print ("\n");
+print ($xyz);
+
+}
 
 
 

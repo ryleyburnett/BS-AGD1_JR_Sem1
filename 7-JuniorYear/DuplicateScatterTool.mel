@@ -1,0 +1,55 @@
+{
+proc ObjectCopyAndScatter()
+{
+/////////////////////////////////////////////////
+
+//INPUT AMOUNT OF COPIES BELOW
+int $copies = 10;
+
+//INPUT RANGE OF XYZ VALUES BELOW
+float $xPos = 10; 
+float $yPos = 10;
+float $zPos = 10;
+
+/////////////////////////////////////////////////
+float $x;
+float $y; 
+float $z; 
+string $xyz[];
+string $objects[];
+//SELECTION--------------------------------------
+string $sels[];
+$sels = `ls -sl`;
+
+if(!size($sels) > 0)
+{
+	//CHECK FOR SELECTION
+	error("Must \"select\" an object.");
+}
+
+$objects[size($objects)] = $sels[0];
+//-----------------------------------------------
+/////////////////////////////////////////////////
+for ($i = 0; $i < ($copies);)
+{
+    //CREATES A RAND # BETWEEN POS XYZ & NEG XYZ
+    $x = `rand ($xPos * -1) $xPos`;
+    $y = `rand ($yPos * -1) $yPos`; 
+    $z = `rand ($zPos * -1) $zPos`; 
+    $xyz[0] = $x; $xyz[1] = $y; $xyz[2] = $z;
+    //MOVES OBJECT TO GENERATED POS
+    move -x ($xyz[0]) -y ($xyz[1]) -z ($xyz[2]) $objects[($i)];
+    //DUPLICATES, ADDS TO OBJECTS ARRAY, REPEATS
+    $sels = `duplicate $objects[($i)]`; 
+    $objects[size($objects)] = $sels[0]; 
+    $i++;  
+} 
+/////////////////////////////////////////////////
+
+print ("You have " + size($sels) + " objects selected." + "\n");
+
+}
+
+ObjectCopyAndScatter();
+
+}
