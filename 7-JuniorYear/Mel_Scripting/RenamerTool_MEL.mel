@@ -1,0 +1,41 @@
+{
+
+string $sels[];
+$sels = `ls -sl`;
+
+string $children[];
+string $objects[];
+
+if(!size($sels) > 0)
+{
+	//CHECK FOR SELECTION
+	error("Must \"select\" an object.");
+}
+
+//------- ADDS SELECTED OBJECT AND ITS CHILDREN TOGETHER IN A STRING -----------
+$objects[size($objects)] = $sels[0];
+$children = `listRelatives -allDescendents $sels`;
+
+int $i = (size($objects));
+appendStringArray($children, $objects, $i);
+$i = (size($children));
+
+clear $objects;
+
+//--- PUTS OBJECTS IN ORDER FROM PARENT TO LAST GRANDCHILD ---------------------
+int $x = 0;
+for ($i = (size($children)); $i >= 0;)
+{
+    $objects[$x] = $children[$i];
+    $x++;
+    $i--;
+}
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+print ($objects);
+
+}
