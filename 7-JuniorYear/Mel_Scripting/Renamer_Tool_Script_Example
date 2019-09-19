@@ -1,0 +1,68 @@
+{
+string $sels[];
+$sels = `ls -sl`;
+
+string $children[];
+
+if(!size($sels) > 0)
+{
+	//CHECK FOR SELECTION
+	error("Must \"select\" an object.");
+}
+
+/////////////////////////////////////////////////////////////////////
+proc list_children(string $selected)
+{
+    $children = `listRelatives -children $selected`;
+    $size = size($children);
+    for($i=0;$i<$size;++$i)
+    {
+        print $children[$i];
+        print "\n";
+        list_children($children[$i]);
+    }
+}
+
+$sel= `ls -sl`;
+
+for ($list in $sel)
+{
+    list_children($list);
+}
+/////////////////////////////////////////////////////////////////////
+
+
+
+print ($children);
+
+
+}
+
+//32132132132132321321321321321321321323223213213213213213213213232131
+
+{
+string $sels[];
+$sels = `ls -sl`;
+
+string $children[];
+string $objects[];
+
+if(!size($sels) > 0)
+{
+	//CHECK FOR SELECTION
+	error("Must \"select\" an object.");
+}
+
+/////////////////////////////////////////////////////////////////////
+$objects[size($objects)] = $sels[0];
+$children = `listRelatives -allDescendents $sels`;
+
+int $i = (size($objects));
+appendStringArray($children, $objects, $i);
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+print ($children);
+}
