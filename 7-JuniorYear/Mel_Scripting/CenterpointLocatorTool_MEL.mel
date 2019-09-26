@@ -1,0 +1,29 @@
+{
+string $obj[];
+string $objects[];
+
+
+string $sels[];
+$sels = `ls -sl`;
+
+if(!size($sels) > 0)
+{
+	//CHECK FOR SELECTION
+	error("Must \"SELECT\" an object.");
+}
+
+$obj = `cluster -name "Centerpoint_Cluster_" $sels`;
+$objects[size($objects)] = $obj[1];
+
+$obj = `spaceLocator -name "Centerpoint_Locator"`;
+$objects[size($objects)] = $obj[0];
+
+matchTransform $objects[1] $objects[0];
+delete $objects[0];
+
+
+
+print ($sels);
+print ($objects);
+
+}
