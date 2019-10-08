@@ -676,3 +676,131 @@ print ("\nThrough the if statement.");
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+proc Calculator(float $input1, float $input2, float $input3, int $operNum)
+{
+    if($operNum < 0)
+    {
+		error("Operator number must be greater than or equal to 0. OPERATOR OPTIONS ARE: 0-ADD, 1-SUBTRACT, 2-MULTIPLY, 3-DIVIDE, 4-EXPONENT, 5-MEAN, 6-MEDIAN, 7-MODE");
+    }
+    if($operNum > 7)
+    {
+		error("Operator number must be less than or equal to 7. OPERATOR OPTIONS ARE: 0-ADD, 1-SUBTRACT, 2-MULTIPLY, 3-DIVIDE, 4-EXPONENT, 5-MEAN, 6-MEDIAN, 7-MODE");
+    }
+////////////////////////////////////////////////////////////////////////////////  
+string $operation[] = 
+{"ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "EXPONENT", "MEAN", "MEDIAN", "MODE"};
+print ("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+//////////////////////////////////////////////////////////////////////////////// 
+
+float $numOfInputs;
+
+if($input3 == 0)
+{
+    $numOfInputs = 2;    
+}
+else
+{
+    $numOfInputs = 3;
+}
+
+//////////////////////////////////////////////////////////////////////////////// 
+string $output;
+
+if($operNum == 0)
+    {
+        //--- ADD ---
+        print $operation[($operNum)];
+        $output = ($input1 + $input2 + $input3);
+    }
+if($operNum == 1)
+    {
+        //--- SUBTRACT ---
+        print $operation[($operNum)];
+        $output = ($input1 - $input2 - $input3); 
+    }
+if($operNum == 2)
+    {
+        //--- MULTIPLY ---
+        print $operation[($operNum)];
+        $output = ($input1 * $input2 * $input3); 
+    }
+if($operNum == 3)
+    {
+        //--- DIVIDE ---
+        print $operation[($operNum)];
+        $output = ($input1 / $input2 / $input3); 
+    }
+if($operNum == 4)
+    {
+        //--- EXPONENT ---
+        print $operation[($operNum)];
+        $output = `pow $input1 $input2`; 
+    }
+if($operNum == 5)
+    {
+        //--- MEAN ---
+        print $operation[($operNum)];
+        $output = (($input1 + $input2 + $input3) / $numOfInputs); 
+    }
+if($operNum == 6)
+    {
+        //--- MEDIAN ---
+        print $operation[($operNum)];
+        //$output = (); 
+    }
+if($operNum == 7)
+    {
+        //--- MODE ---
+        print $operation[($operNum)];
+        if ($input1 == $input2)
+        {
+            $output = $input1;
+        }
+        if ($input1 == $input3)
+        {
+            $output = $input1;
+        }
+        if ($input2 == $input3)
+        {
+            $output = $input2;
+        }
+    }
+    
+print ("\n");
+print ($input1 + " and " + $input2 + " and " + $input3);
+print ("\n");
+print ("Output of operation = " + $output);
+print ("\n" + "\n");
+print $numOfInputs;
+//////////////////////////////////////////////////////////////////////////////// 
+}
+
+//--- INPUT 1 COMES FIRST IN OPERATION AND SO ON... ----------------------------
+//--- INPUT 4 IS THE OPERATOR NUMBER TO DETERMINE WHICH OPERATION TO PERFORM ---
+//--- OPERATOR OPTIONS ARE: ----------------------------------------------------
+// 0-ADD, 1-SUBTRACT, 2-MULTIPLY, 3-DIVIDE, 4-EXPONENT, 5-MEAN, 6-MEDIAN, 7-MODE
+
+Calculator(4, 2, 2, 5);
+}
+
